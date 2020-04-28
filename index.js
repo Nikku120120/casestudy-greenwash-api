@@ -1,17 +1,21 @@
 const config = require('./src/config/config');
 const mongodb = require('./src/models/mongodb');
+const passportconfig = require('./src/config/passportConfig');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 const cors = require('cors');
 
-const rtsIndex = require('./src/routes/routes');
+const routes = require('./src/routes/routes');
 
 var app = express();
+
 // middleware
 app.use(bodyParser.json());
+app.use(passport.initialize());
 app.use(cors());
-app.use('/api', rtsIndex);
+app.use('/api', routes);
 
 //error handler
 app.use((err, req, res, next) => {

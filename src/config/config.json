@@ -3,7 +3,7 @@
         "PORT": 3000,
         "MONGODB_URI": "mongodb://localhost:27017/CaseStudy-GreenWash",
         "JWT_SECRET": "SECRET", 
-        "JWT_EXP": "2m"
+        "JWT_EXP": "60m"
     },
     "production": {
         "PORT": 80,

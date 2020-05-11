@@ -7,5 +7,5 @@ const userActions = require('../controllers/user.controller');
 router.post('/register', userActions.registerUser);
 router.post('/login', userActions.authenticate);
 router.get('/userProfile',jwt.verifyJwtToken, userActions.userProfile);
-
+router.put('/updateProfile',jwt.verifyJwtToken, userActions.updateProfile);
 module.exports = router;
